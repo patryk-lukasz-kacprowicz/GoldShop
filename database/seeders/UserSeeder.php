@@ -19,6 +19,16 @@ class UserSeeder extends Seeder
         ]);
         $administrator->assignRole(UserRoleEnum::Administrator);
 
+        $productManager = User::factory()->create([
+            'email' => 'manager@e-commerce.pl',
+        ]);
+        $productManager->assignRole(UserRoleEnum::ProductManager);
+
+        $support = User::factory()->create([
+            'email' => 'support@e-commerce.pl',
+        ]);
+        $support->assignRole(UserRoleEnum::Support);
+
         $client = User::factory()->create([
             'email' => 'client@e-commerce.pl',
         ]);
