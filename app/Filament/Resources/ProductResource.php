@@ -27,6 +27,10 @@ class ProductResource extends Resource
                 Forms\Components\Select::make('assigned_to')
                     ->relationship('assignedTo', 'email')
                     ->required(),
+                Forms\Components\Select::make('categories')
+                    ->relationship('categories', 'title')
+                    ->multiple()
+                    ->required(),
                 Forms\Components\Toggle::make('is_visible'),
                 Forms\Components\Toggle::make('is_available'),
                 Forms\Components\FileUpload::make('thumbnail')
