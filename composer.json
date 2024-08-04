@@ -9,6 +9,8 @@
         "filament/filament": "^3.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "owenvoke/blade-fontawesome": "^2.6",
+        "spatie/laravel-permission": "^6.9",
         "tomatophp/filament-locations": "^1.0"
     },
     "require-dev": {
