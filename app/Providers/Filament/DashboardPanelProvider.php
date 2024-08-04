@@ -29,9 +29,6 @@ class DashboardPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
-            ->plugins([
-                FilamentLocationsPlugin::make(),
-            ])
             ->id('dashboard')
             ->path('dashboard')
             ->login()
@@ -61,6 +58,9 @@ class DashboardPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->plugins([
+                FilamentLocationsPlugin::make(),
             ]);
     }
 }
