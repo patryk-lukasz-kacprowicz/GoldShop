@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
@@ -51,5 +52,12 @@ class User extends Authenticatable
 
     public function stocks(): BelongsToMany {
         return $this->belongsToMany(Stock::class, 'stock_workers');
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function products(): HasMany {
+        return $this->hasMany(Product::class, 'patron_id');
     }
 }
